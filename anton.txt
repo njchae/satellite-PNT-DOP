@@ -1,0 +1,42 @@
+Omega, i - plane of orbit
+e - shape
+a - how big
+w - rotation of orbit in its plane
+f - position on orbit (f = true anomoly)
+
+
+6 planes
+24 satellites
+4 satellites per plane
+6 planes
+i = const.
+6 nodes
+
+
+Omega = longitude kinda
+Omega = 0, 60, 120, 180, 240, 300, 360
+f = 0, 90, 180, 270, 360
+
+true longitude = f + w + Omega
+
+a, e, i, w, Omega, f ------> x, y, z, vx, vy, vz
+
+
+M = mean anomoly (changes uniformly w/ time)
+M = M0 + nt (n is mean motion / orbital frequency)
+
+function to write:
+
+	elems2coord
+
+	constellation
+
+	inputs: list of tuples of elems (# of satellites)
+
+	output: list of numpy arrays for x, y, z
+
+	visibility:
+		inputs: lat & lon of a point on lunar surface
+			x, y, z (list of np arrays)
+			time
+		output: number of satellites at each time visible at that point
